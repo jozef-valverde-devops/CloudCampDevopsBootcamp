@@ -1,0 +1,7 @@
+---
+- name: instalar servidor usando Galaxy
+  hosts: web
+  become: yes
+
+  roles:
+  - geerlingguy.apache
