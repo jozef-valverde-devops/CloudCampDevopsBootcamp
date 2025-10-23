@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kanban-ui
+spec:
+  selector:
+    app: kanban-ui
+  type: LoadBalancer
+  ports:
+  - port: 4200 # entry point to the Service
+    targetPort: 80 # entry point to the application within the Pod
+    protocol: TCP

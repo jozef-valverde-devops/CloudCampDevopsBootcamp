@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanban-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kanban-ui
+  template:
+    metadata:
+      labels:
+        app: kanban-ui
+    spec:
+      restartPolicy: Always            
+      containers:
+      - name: kanban-ui
+        image: kanban-ui:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
